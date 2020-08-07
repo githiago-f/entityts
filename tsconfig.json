@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "allowJs": false,
+        "checkJs": false,
+        "outDir": "out",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/@types"
+        ],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "noEmit": true
+    }
+}
