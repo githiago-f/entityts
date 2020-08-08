@@ -1,11 +1,11 @@
+import { IoCContainer } from '../ioc-container/index';
 
-export const Autowire: MethodDescriptor<string> =
-(implementationOf: string) =>
-    (target, methodName, descriptor) => {
-        console.log(methodName, descriptor, implementationOf);
+export const Autowire: TMethodDecorator =
+(dependency: string)=>
+    (target, propertyName, descriptor) => {
         return {
             get () {
-                return IoCContainer.instance().resolve(implementationOf);
+                return IoCContainer.instance.resolve(dependency);
             }
-        };
+        } as typeof descriptor;
     };

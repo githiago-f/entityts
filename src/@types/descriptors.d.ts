@@ -1,20 +1,18 @@
-type MethodDescriptor<T> = (args: T) =>
-    (
-        target: any,
-        methodName: string,
-        description: PropertyDescriptor
-    ) => void;
-
-type NoParamsMethodDescriptor = (
+type NoParamsMethodDecorator = (
     target: any,
     methodName: string,
     description: PropertyDescriptor
 ) => void;
 
-type NoParamsClassDescriptor = (
+type TMethodDecorator = (args: any) =>
+    NoParamsMethodDecorator;
+
+type NoParamsClassDecorator = (
     constructor: (new (...args: unknown[]) => unknown)
 ) => any;
 
-type ClassDescriptor<T> = (args: T) => (
-    constructor: (new (...args: unknown[]) => unknown)
-) => any;
+type TClassDecorator = (args: any) => NoParamsClassDecorator;
+
+type NoParamPropertyDecorator = (target: any, propertyName: string) => any
+
+type TPropertyDecorator = (...args: any[]) => NoParamPropertyDecorator

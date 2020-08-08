@@ -1,5 +1,6 @@
+import { IoCContainer } from '../ioc-container/index';
 
-export const Service: NoParamsClassDescriptor =
+export const Service: NoParamsClassDecorator =
     (target) => {
-        console.log(target.name);
+        IoCContainer.instance.register(target.name, [], target);
     };
