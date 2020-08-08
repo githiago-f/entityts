@@ -11,7 +11,7 @@ type NoParamsClassDecorator = (
     constructor: (new (...args: unknown[]) => unknown)
 ) => any;
 
-type TClassDecorator = (args: any) => NoParamsClassDecorator;
+type TClassDecorator<T> = (args: T) => NoParamsClassDecorator;
 
 type NoParamPropertyDecorator = (target: any, propertyName: string) => any
 

@@ -1,11 +1,8 @@
 import { IoCContainer } from '../ioc-container/index';
 
-export const Autowire: TMethodDecorator =
+export const Autowire: TPropertyDecorator =
 (dependency: string)=>
-    (target, propertyName, descriptor) => {
-        return {
-            get () {
-                return IoCContainer.instance.resolve(dependency);
-            }
-        } as typeof descriptor;
+    (target, propertyName) => {
+        console.log(target.prototype);
+        // target.prototype[propertyName] = IoCContainer.instance.resolve(dependency);
     };

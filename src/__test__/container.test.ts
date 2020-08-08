@@ -1,5 +1,7 @@
-describe('IoC Container tests', ()=>{
-    test('should create a new IoC-container', ()=> {
-        expect(0).toBe(0);
+import { IoCContainer } from '../ioc-container/index';
+
+describe('IoC Container', ()=>{
+    test('should return a instance of Container', ()=> {
+        expect(IoCContainer.instance).toBeInstanceOf(IoCContainer);
     });
 });

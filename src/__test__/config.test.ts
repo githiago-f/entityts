@@ -1,6 +1,6 @@
 
-describe('', ()=>{
-    test('should initialize a configuration object', ()=> {
+describe('Database configuration', ()=>{
+    test('should initialize a Database configuration object', ()=> {
         expect(true).toBeTruthy();
     });
 });

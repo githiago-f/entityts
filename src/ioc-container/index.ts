@@ -17,15 +17,10 @@ export class IoCContainer {
         return this.dependencies[name];
     }
 
-    register(name: string, dependencies: string[], implementation: TClass): void {
+    register(name: string, implementation: TClass): void {
         if(this.dependencies[name]) {
             throw new Error('this dependencie is already registered');
         }
-        const deps = this.getDependenciesImplementations(dependencies);
-        this.dependencies[name] = new implementation(...deps);
-    }
-
-    private getDependenciesImplementations(dependencies: string[]) {
-        return dependencies.map(dep => this.resolve(dep));
+        this.dependencies[name] = new implementation();
     }
 }
