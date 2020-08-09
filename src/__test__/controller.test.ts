@@ -2,7 +2,7 @@ import { MyController } from './mock/controllers/MyController';
 import { IoCContainer } from '../ioc-container/index';
 import { MyService } from './mock/services/MyService';
 
-describe('Controller Database integration', () => {
+describe('Integrations between Controller and Service', () => {
     test('should include a "MyService" instance', ()=>{
         IoCContainer.instance.erase();
         const controller = new MyController();
