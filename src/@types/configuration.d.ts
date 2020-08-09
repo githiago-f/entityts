@@ -5,3 +5,7 @@ declare type Config = {
     password?: string;
     extraConfig?: {[key: string]: string | number}
 }
+
+declare interface IConfiguration {
+    _config: Config;
+}

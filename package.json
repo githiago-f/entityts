@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
+    "typings": "/src/@types",
     "devDependencies": {
         "@types/jest": "^26.0.9",
         "@types/node": "^14.0.27",

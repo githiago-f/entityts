@@ -11,16 +11,26 @@ export class IoCContainer {
     }
 
     resolve(name: string): unknown {
-        if(!this.dependencies[name]) {
+        if(name.trim() === '' || !this.dependencies[name]) {
             throw new Error('this implementation isn\'t registered.');
         }
         return this.dependencies[name];
     }
 
     register(name: string, implementation: TClass): void {
+        if(name.trim() === '') {
+            throw new Error('this name isn\'t applyable.');
+        }
         if(this.dependencies[name]) {
-            throw new Error('this dependencie is already registered');
+            throw new Error('this dependencie is already registered.');
         }
         this.dependencies[name] = new implementation();
+    }
+
+    /**
+     * @description this is only applyable to tests
+     */
+    erase(): void {
+        this.dependencies = {};
     }
 }

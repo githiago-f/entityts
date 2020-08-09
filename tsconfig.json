@@ -12,5 +12,6 @@
         "emitDecoratorMetadata": true,
         "esModuleInterop": true,
         "noEmit": true
-    }
+    },
+    "exclude": ["jest.config.js"]
 }
