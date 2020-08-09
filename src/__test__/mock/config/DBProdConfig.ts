@@ -4,6 +4,7 @@ import { Configuration } from '../../../decorators/configuration';
     client: 'mysql2',
     database: 'posts',
     password: process.env.DB_PASSWORD || '',
-    username: process.env.DB_USERNAME || 'root'
+    username: process.env.DB_USERNAME || 'root',
+    envirornment: 'production'
 })
 export class DBTestConfig {}
