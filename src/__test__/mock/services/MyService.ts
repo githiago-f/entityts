@@ -1,9 +1,12 @@
 import { Service } from '../../../decorators/service';
 import { Person } from '../models/Person';
+import { Autowire } from '../../../decorators/autowired';
+import { DBTestConfig } from '../config/DBTestConfig';
 
-@Service('test')
+@Service
 export class MyService implements IService<Person, number> {
-    _connection: any;
+    @Autowire('test')
+    _connection: DBTestConfig;
 
     save: (entity: Person) => Person;
     update: (entity: Person, id: number) => Person;

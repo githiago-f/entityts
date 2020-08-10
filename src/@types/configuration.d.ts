@@ -10,4 +10,5 @@ declare type Config = {
 declare interface IConfiguration {
     _config: Config;
     _env: string;
+    _connection: any;
 }
