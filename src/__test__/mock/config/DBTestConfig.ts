@@ -6,4 +6,8 @@ import { Configuration } from '../../../decorators/configuration';
     database: path.resolve(__dirname, 'db/tests.db'),
     envirornment: 'test'
 })
-export class DBTestConfig {}
+export class DBTestConfig implements IConfiguration {
+    _config: Config;
+    _env: string;
+    _connection: any;
+}

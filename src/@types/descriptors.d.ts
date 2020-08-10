@@ -15,4 +15,4 @@ type TClassDecorator<T> = (args: T) => NoParamsClassDecorator;
 
 type NoParamPropertyDecorator = (target: any, propertyName: string) => any
 
-type TPropertyDecorator = (...args: any[]) => NoParamPropertyDecorator
+type TPropertyDecorator<T = any> = (...args: T[]) => NoParamPropertyDecorator

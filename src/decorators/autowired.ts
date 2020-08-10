@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { IoCContainer } from '../ioc-container/index';
 
-export const Autowire: TPropertyDecorator =
+export const Autowire: TPropertyDecorator<string> =
 (dependency: string) =>
     (target, propertyName) => {
         const prototype =  Reflect.getPrototypeOf(target);
