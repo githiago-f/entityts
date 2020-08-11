@@ -2,7 +2,6 @@ import { Service } from '../../../decorators/service';
 import { Person } from '../models/Person';
 import { Autowire } from '../../../decorators/autowired';
 import { DBTestConfig } from '../config/DBTestConfig';
-import { Query } from '../../../decorators/query';
 
 @Service
 export class MyService implements IService<Person, number> {

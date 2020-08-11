@@ -19,7 +19,6 @@ describe('Integrations between Controller and Service', () => {
         const controller = useController();
         const service = controller.service;
         const person = <Person> (await service.getOne({ id: 1 } as Person));
-        console.log(person);
         expect(person.id).toBe(1);
     });
 });
