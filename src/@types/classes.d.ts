@@ -1,1 +1,1 @@
-declare type TClass<T = unknown> = (new (...args: unknown[]) => T);
+declare type TClass<T = any> = {new (...args: any[]): T};

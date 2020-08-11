@@ -1,18 +1,18 @@
 type NoParamsMethodDecorator = (
-    target: TClass,
+    target: any,
     methodName: string,
     description: PropertyDescriptor
 ) => void;
 
-type TMethodDecorator = (args: unknown) =>
+type TMethodDecorator<T = unknown> = (...args: T[]) =>
     NoParamsMethodDecorator;
 
 type NoParamsClassDecorator = (
-    constructor: TClass
-) => unknown;
+    constructor: any
+) => any;
 
-type TClassDecorator<T> = (args: T) => NoParamsClassDecorator;
+type TClassDecorator<T> = (...args: T[]) => NoParamsClassDecorator;
 
-type NoParamPropertyDecorator = (target: unknown, propertyName: string) => unknown
+type NoParamPropertyDecorator = (target: any, propertyName: string) => any
 
 type TPropertyDecorator<T = unknown> = (...args: T[]) => NoParamPropertyDecorator

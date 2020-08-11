@@ -18,5 +18,8 @@
     "dependencies": {
         "reflect-metadata": "^0.1.13",
         "typescript": "^3.9.7"
+    },
+    "scripts": {
+        "test": "jest"
     }
 }

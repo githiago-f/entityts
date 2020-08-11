@@ -10,5 +10,5 @@ declare type Config = {
 declare interface IConfiguration {
     _config: Config;
     _env: string;
-    _connection: IConnection;
+    _connection: Promise<IConnection>;
 }

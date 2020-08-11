@@ -7,4 +7,8 @@ import { Configuration } from '../../../decorators/configuration';
     username: process.env.DB_USERNAME || 'root',
     envirornment: 'production'
 })
-export class DBProdConfig {}
+export class DBProdConfig implements IConfiguration {
+    _config: Config;
+    _env: string;
+    _connection: IConnection;
+}

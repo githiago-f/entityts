@@ -1,3 +1,4 @@
+
 declare interface IConnection {
-    useRaw: (query: string) => Unknown[];
+    useRaw: (query: string) => Promise<Sqlite3.Statement>;
 }
