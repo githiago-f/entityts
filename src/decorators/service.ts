@@ -2,13 +2,15 @@ import { IoCContainer } from '../ioc-container/index';
 
 export const Service: NoParamsClassDecorator =
     (target) => {
-        const prototype = target.prototype as IService<any, number>;
+        const prototype = target.prototype as IService<Unknown, unknown>;
+
+        const table = 'persons', identificator = 'id';
 
         const config = prototype._config;
         const { useRaw } = config._connection;
 
         prototype.getOne = async function(id) {
-            return await useRaw('SELECT * FROM ${table} WHERE ${identificator} = ${id}');
+            return useRaw(`SELECT * FROM ${table} WHERE ${identificator} = ${id}`)[0];
         };
         prototype.getAll = async function() { return []; };
         prototype.save = async function(entity) { return null; };
