@@ -1,3 +1,5 @@
+import { executeQuery } from '../functions/executeQuery';
+
 export const Query: TPropertyDecorator<string> =
 (query) =>
     (target, methodName) => {
@@ -5,16 +7,5 @@ export const Query: TPropertyDecorator<string> =
 
         const config = prototype._config;
 
-        const executeQuery = async function(){
-            const { useRaw } = await config._connection;
-            const statement = await useRaw(query);
-            return new Promise((resolve, reject)=>{
-                statement.all((err, rows) => {
-                    if(err) return reject(err);
-                    return resolve(rows);
-                });
-            });
-        };
-
-        prototype[methodName] = executeQuery;
+        prototype[methodName] = () => executeQuery(config, query);
     };

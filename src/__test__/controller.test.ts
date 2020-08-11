@@ -1,24 +1,25 @@
 import { MyController } from './mock/controllers/MyController';
 import { IoCContainer } from '../ioc-container/index';
 import { MyService } from './mock/services/MyService';
+import { Person } from './mock/models/Person';
 
 describe('Integrations between Controller and Service', () => {
-    test('should include a "MyService" instance', ()=>{
+
+    const useController = () => {
         IoCContainer.instance.erase();
-        const controller = new MyController();
+        return new MyController();
+    };
+
+    test('should include a "MyService" instance', ()=>{
+        const controller = useController();
         expect(controller.service).toBeInstanceOf(MyService);
     });
 
-    test('should override log() from MyService', () => {
-        IoCContainer.instance.erase();
-        const controller = new MyController();
-        expect(controller.log()).toBe('Service is being used');
-    });
-
     test('Should realize a simple query and return one value', async () => {
-        IoCContainer.instance.erase();
-        const controller = new MyController();
-        const value = await controller.runQuery();
-        expect(value[0].id).toBe(1);
+        const controller = useController();
+        const service = controller.service;
+        const person = <Person> (await service.getOne({ id: 1 } as Person));
+        console.log(person);
+        expect(person.id).toBe(1);
     });
 });
