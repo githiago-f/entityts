@@ -4,7 +4,6 @@ import { MyService } from './mock/services/MyService';
 import { Person } from './mock/models/Person';
 
 describe('Integrations between Controller and Service', () => {
-
     const useController = () => {
         IoCContainer.instance.erase();
         return new MyController();

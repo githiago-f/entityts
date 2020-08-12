@@ -5,7 +5,11 @@ import { executeQuery } from '../functions/executeQuery';
 export const Service: NoParamsClassDecorator =
     (target) => {
         const prototype = target.prototype as IService<Unknown, unknown>;
-        const table = 'persons';
+
+        const defaultEntity = prototype._entity as TEntity;
+        console.log(defaultEntity);
+
+        const table = defaultEntity._tableName;
         const config = prototype._config;
 
         prototype.getOne = async function(entity) {

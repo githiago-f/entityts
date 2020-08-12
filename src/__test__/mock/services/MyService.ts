@@ -2,8 +2,10 @@ import { Service } from '../../../decorators/service';
 import { Person } from '../models/Person';
 import { Autowire } from '../../../decorators/autowired';
 import { DBTestConfig } from '../config/DBTestConfig';
+import { UseEntity } from '../../../decorators/useEntity';
 
 @Service
+@UseEntity(Person)
 export class MyService implements IService<Person, number> {
     @Autowire('test')
     _config: DBTestConfig;

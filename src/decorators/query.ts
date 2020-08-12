@@ -1,7 +1,7 @@
 import { executeQuery } from '../functions/executeQuery';
 
-export const Query: TPropertyDecorator<string> =
-(query) =>
+export const Query: TPropertyDecorator =
+(query: string) =>
     (target, methodName) => {
         const prototype = Reflect.getPrototypeOf(target) as IService<Unknown, unknown>;
 

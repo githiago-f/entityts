@@ -4,15 +4,15 @@ type NoParamsMethodDecorator = (
     description: PropertyDescriptor
 ) => void;
 
-type TMethodDecorator<T = string[]> = (args: T) =>
+type TMethodDecorator = (...args: any[]) =>
     NoParamsMethodDecorator;
 
 type NoParamsClassDecorator = (
     constructor: any
 ) => any;
 
-type TClassDecorator<T = string[]> = (args: T) => NoParamsClassDecorator;
+type TClassDecorator = (...args: any[]) => NoParamsClassDecorator;
 
 type NoParamPropertyDecorator = (target: any, propertyName: string) => any
 
-type TPropertyDecorator<T = string[]> = (args: T) => NoParamPropertyDecorator
+type TPropertyDecorator = (...args: any[]) => NoParamPropertyDecorator
