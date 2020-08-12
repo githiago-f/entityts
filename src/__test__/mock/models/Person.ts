@@ -1,11 +1,14 @@
 import { Entity } from '../../../decorators/entity';
 
 @Entity('persons', {
-    '_id': {
-        type: 'number'
+    id: {
+        type: 'number',
+        name:'',
+        defaultValue: 0
     },
-    '_name': {
-        type: 'string'
+    name: {
+        type: 'string',
+        defaultValue: 'Thiago'
     }
 })
 export class Person {
@@ -13,4 +16,7 @@ export class Person {
         private _id: number,
         private _name: string
     ){}
+
+    get id(): number { return this._id; }
+    get name(): string { return this._name; }
 }

@@ -9,5 +9,5 @@ import { Configuration } from '../../../decorators/configuration';
 export class DBTestConfig implements IConfiguration {
     _config: Config;
     _env: string;
-    _connection: any;
+    _connection: Promise<IConnection>;
 }
