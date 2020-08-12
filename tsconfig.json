@@ -12,7 +12,9 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "esModuleInterop": true,
-        "noEmit": true
+        "noEmit": true,
+        "declaration": true,
+        "declarationDir": "out/typings"
     },
-    "exclude": ["jest.config.js"]
+    "exclude": ["jest.config.js", "./out"]
 }

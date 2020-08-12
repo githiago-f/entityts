@@ -10,5 +10,5 @@ import { Configuration } from '../../../decorators/configuration';
 export class DBProdConfig implements IConfiguration {
     _config: Config;
     _env: string;
-    _connection: IConnection;
+    _connection: Promise<IConnection>;
 }

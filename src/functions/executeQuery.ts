@@ -4,7 +4,9 @@ export const executeQuery = async function(config: IConfiguration, query: string
     return new Promise((resolve, reject)=>{
         if(query.match(/select/ig)) {
             statement.all((err, rows) => {
-                if(err) return reject(err);
+                if(err) {
+                    return reject(err);
+                }
                 return resolve(rows);
             });
         }else {
