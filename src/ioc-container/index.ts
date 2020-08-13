@@ -1,7 +1,9 @@
 // will contain a ioc-container
 export class IoCContainer {
     private static _instance = new IoCContainer();
-    private dependencies: Unknown = {};
+    private dependencies: Unknown = {
+        'console': console.log
+    };
     public static get instance(): IoCContainer { return this._instance; }
     private constructor() {
         if(IoCContainer._instance) {
@@ -31,6 +33,8 @@ export class IoCContainer {
      * @description this is only applyable to tests
      */
     erase(): void {
-        this.dependencies = {};
+        this.dependencies = {
+            'console': console.log
+        };
     }
 }

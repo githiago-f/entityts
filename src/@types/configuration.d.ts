@@ -5,6 +5,7 @@ declare type Config = {
     password?: string;
     extraConfig?: {[key: string]: string | number};
     envirornment: string;
+    logSQL?: boolean;
 }
 
 declare interface IConfiguration {
