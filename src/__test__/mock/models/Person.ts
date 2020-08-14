@@ -13,10 +13,16 @@ import { Entity } from '../../../decorators/entity';
 })
 export class Person {
     constructor(
-        private _id: number,
-        private _name: string
+        private id: number,
+        private name: string,
+        private createdAt: string
     ){}
 
-    get id(): number { return this._id; }
-    get name(): string { return this._name; }
+    get getId(): number { return this.id; }
+    get getName(): string { return this.name; }
+
+    get getCreatedAt(): Date { return new Date(this.createdAt); }
+    set setCreatedAt(createdAt: Date) {
+        this.createdAt = createdAt.toISOString();
+    }
 }

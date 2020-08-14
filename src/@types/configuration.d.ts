@@ -1,4 +1,4 @@
-declare type Config = {
+declare interface Config {
     client: 'sqlite3' | 'mysql2' | 'postgres';
     database: string;
     username?: string;

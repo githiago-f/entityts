@@ -17,7 +17,9 @@ describe('Integrations between Controller and Service', () => {
     test('Should realize a simple query and return one value', async () => {
         const controller = useController();
         const service = controller.service;
-        const person = <Person> (await service.getOne({ id: 1 } as Person));
-        expect(person.id).toBe(1);
+        const person = <Person> (await service.getOne(<Person> ({ id: 1 } as unknown)));
+        expect(person).toEqual(
+            new Person(1, 'Thiago Farias', '04:27:25')
+        );
     });
 });
