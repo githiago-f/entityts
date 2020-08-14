@@ -1,7 +1,7 @@
 import { IoCContainer } from '../ioc-container/index';
 import { parseKeyValue } from '../functions/parseKeyValue';
 
-export const Service: NoParamsClassDecorator =
+export const Service: TClassDecorator =
     (target) => {
         const prototype = target.prototype as IService<Unknown, unknown>;
         const defaultEntity = prototype._entity as TEntity;

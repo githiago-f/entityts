@@ -4,7 +4,8 @@ import { Configuration } from '../../../decorators/configuration';
 @Configuration({
     client: 'sqlite3',
     database: path.resolve(__dirname, 'db/tests.db'),
-    envirornment: 'test'
+    envirornment: 'test',
+    logSQL: true
 })
 export class DBTestConfig implements IConfiguration {
     _config: Config;

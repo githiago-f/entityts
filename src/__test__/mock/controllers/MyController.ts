@@ -1,4 +1,4 @@
-import { Autowire } from '../../../decorators/autowired';
+import { Autowire } from '../../../decorators/autowire';
 import { MyService } from '../services/MyService';
 import { Person } from '../models/Person';
 

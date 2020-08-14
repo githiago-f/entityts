@@ -13,3 +13,5 @@ declare interface IConfiguration {
     _env: string;
     _connection: Promise<IConnection>;
 }
+
+type TConfiguration = (config: Config) => TClassDecorator;
