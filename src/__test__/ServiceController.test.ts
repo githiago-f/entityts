@@ -18,6 +18,9 @@ describe('Integrations between Controller and Service', () => {
         const controller = useController();
         const service = controller.service;
         const person = <Person> (await service.getOne(<Person> ({ id: 1 } as unknown)));
+
+        console.log(Person['_columns']);
+
         expect(person).toEqual(
             new Person(1, 'Thiago Farias', '04:27:25')
         );

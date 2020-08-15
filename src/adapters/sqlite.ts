@@ -1,4 +1,4 @@
-import { logQuery } from '../functions/logQuery';
+import { logQuery } from '../functions/logging-strategy';
 
 export async function SQLite(config: Config): Promise<IConnection> {
     const sqlite = (await import('sqlite3')).verbose();

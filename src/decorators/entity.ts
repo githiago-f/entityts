@@ -5,8 +5,12 @@ export const Entity: DecoratorEntity =
     (target) => {
         const prototype = target.prototype as TEntity;
 
-        prototype._columns = schema;
+        target['_columns'] = schema;
         prototype._tableName = tableName;
+
+        prototype._runMigrations = () => {
+            //todo
+        };
 
         IoCContainer.instance.register(target.name, target);
     };

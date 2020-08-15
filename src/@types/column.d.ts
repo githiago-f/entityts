@@ -1,5 +1,3 @@
-declare type TEvaluable = () => unknown
-
 declare interface IColumn {
     type: 'string' | 'number' | 'evaluable';
     name?: string;

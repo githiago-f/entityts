@@ -3,15 +3,14 @@ import { Entity } from '../../../decorators/entity';
 @Entity('persons', {
     id: {
         type: 'number',
-        defaultValue: 0
+        defaultValue: 1
     },
     name: {
-        type: 'string',
-        defaultValue: 'Thiago'
+        type: 'string'
     },
     createdAt: {
         type: 'evaluable',
-        defaultValue: () => new Date()
+        defaultValue: () => new Date().toISOString()
     }
 })
 export class Person {
