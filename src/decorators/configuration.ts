@@ -1,7 +1,7 @@
 import { IoCContainer } from '../ioc-container/index';
 import clients from './../adapters/index';
 
-export const Configuration: TClassDecorator =
+export const Configuration: TConfiguration =
     (config: Config ) =>
         (constructor) => {
             const prototype = constructor.prototype as IConfiguration;

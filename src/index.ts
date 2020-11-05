@@ -1,4 +1,4 @@
-export * from './decorators/autowired';
+export * from './decorators/autowire';
 export * from './decorators/configuration';
 export * from './decorators/entity';
 export * from './decorators/query';

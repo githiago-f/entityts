@@ -1,6 +1,6 @@
 declare type TEntity = {
-    _columns: TColumn;
     _tableName: string;
+    _runMigrations: TEvaluable
 }
 
 declare type DecoratorEntity =

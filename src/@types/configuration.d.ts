@@ -1,4 +1,4 @@
-declare type Config = {
+declare interface Config {
     client: 'sqlite3' | 'mysql2' | 'postgres';
     database: string;
     username?: string;
@@ -13,3 +13,5 @@ declare interface IConfiguration {
     _env: string;
     _connection: Promise<IConnection>;
 }
+
+type TConfiguration = (config: Config) => TClassDecorator;

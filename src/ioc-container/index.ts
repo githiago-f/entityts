@@ -1,4 +1,3 @@
-// will contain a ioc-container
 export class IoCContainer {
     private static _instance = new IoCContainer();
     private dependencies: Unknown = {
