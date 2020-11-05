@@ -1,23 +1,30 @@
 import { IoCContainer } from '../ioc-container/index';
 
-describe('IoC Container', ()=>{
-    test('should return a instance of Container', ()=> {
-        expect(IoCContainer.instance).toBeInstanceOf(IoCContainer);
+describe('# IoCContainer', ()=>{
+    beforeEach(() => {
+        IoCContainer.instance.erase();
     });
 
-    test('implement an nonamed class should return an error', ()=>{
+    it('should not implement an unamed object', ()=>{
         const errorWrapper = () => IoCContainer.instance.register('', class {});
-        IoCContainer.instance.erase();
         expect(
             errorWrapper
         ).toThrowError(new Error('this name isn\'t applyable.'));
     });
 
-    test('try to get an non implemented class should return an error', () => {
+    it('can\'t get a unimplemented object', () => {
         const errorWrapper = () => IoCContainer.instance.resolve('');
-        IoCContainer.instance.erase();
         expect(
             errorWrapper
         ).toThrowError(new Error('this implementation isn\'t registered.'));
+    });
+
+    it('can\'t register an object more than one time', () => {
+        const errorWrapper = () => IoCContainer.instance.register('Effect', class {});
+
+        IoCContainer.instance.register('Effect', class {});
+
+        expect(errorWrapper)
+            .toThrowError(new Error('this dependencie is already registered.'));
     });
 });

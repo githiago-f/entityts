@@ -2,6 +2,11 @@
     "name": "entityjs",
     "version": "1.0.0",
     "main": "src/index.ts",
+    "author": {
+        "email": "tfarias@protonmail.com",
+        "name": "githiago-f",
+        "url": "https://github.com/githiago-f"
+    },
     "license": "MIT",
     "devDependencies": {
         "@types/jest": "^26.0.9",

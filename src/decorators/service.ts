@@ -27,10 +27,8 @@ export const Service: NoParamsClassDecorator =
 
         prototype.save = async function(entity) {
             const keys = Object.keys(entity);
-            const vals = () => {
-                return keys.map(key => entity[key]).join(', ');
-            };
-            const query = `INSERT INTO ${table} (${keys.join(', ')}) VALUES (${vals()})`;
+            const vals =  keys.map(key => entity[key]).join(', ');
+            const query = `INSERT INTO ${table} (${keys.join(', ')}) VALUES (${vals})`;
             await executeQuery(query);
             return null;
         };
